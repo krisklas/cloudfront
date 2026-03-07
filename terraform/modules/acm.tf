@@ -1,6 +1,5 @@
 resource "aws_acm_certificate" "cert" {
-  # ACM cert must be in us-east-1 for use with CloudFront
-  domain_name       = local.dns_name
+  domain_name       = var.dns_name
   validation_method = "DNS"
 
   lifecycle {
@@ -8,7 +7,7 @@ resource "aws_acm_certificate" "cert" {
   }
 
   tags = {
-    Name = "${local.environment}-${local.app_name}-cert"
+    Name = "${var.environment}-${var.app_name}-cert"
   }
 }
 

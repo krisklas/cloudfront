@@ -13,7 +13,7 @@ variable "dns_name" {
   description = "The fully qualified domain name (FQDN) for the CloudFront distribution aliases."
 }
 
-variable "certificate_arn" {
+variable "hosted_zone_id" {
   type        = string
-  description = "The ARN of the ACM certificate to be used for the CloudFront distribution."
+  description = "Hosted zone id of the domain"
 }

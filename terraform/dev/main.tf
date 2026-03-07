@@ -35,9 +35,8 @@ provider "aws" {
 module "cdn" {
   source = "../modules"
 
-  environment = local.environment
-  app_name    = local.app_name
-  dns_name    = local.dns_name
-
-  certificate_arn = aws_acm_certificate_validation.cert.certificate_arn
+  environment    = local.environment
+  app_name       = local.app_name
+  dns_name       = local.dns_name
+  hosted_zone_id = var.hosted_zone_id
 }
